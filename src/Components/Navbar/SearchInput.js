@@ -10,10 +10,10 @@ const SearchInput = () => {
     const searchParams = useSearchParams()
 
     const handleSearch = (event) => {
-        event.preventDefault()
         const searchInput = searchRef?.current?.value
 
-        if (searchInput) {
+        if (searchInput && (event.key == 'Enter' || event.type == 'click')) {
+            event.preventDefault()
             searchRouter.push(`/search?q=${searchInput}`)
         }
     }
@@ -25,14 +25,15 @@ const SearchInput = () => {
             <input 
                 type="text"
                 placeholder="Cari Animek"
-                className="w-full p-3 rounded-xl"
+                className="w-full p-3 rounded-xl text-main-dark"
+                onKeyDown={handleSearch}
                 // defaultValue={currentSearchParams}
                 ref={searchRef}
             />
             <button 
                 className="absolute top-3 end-3"
                 onClick={handleSearch}>
-                <MagnifyingGlass size={24} />
+                <MagnifyingGlass className="text-main-dark" size={24} />
             </button>
         </div>
     )
