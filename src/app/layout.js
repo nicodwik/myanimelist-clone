@@ -2,7 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/Components/Navbar'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({subsets : ['latin', 'latin-ext']})
 const title = 'My Anime List - clone'
 
 export const metadata = {

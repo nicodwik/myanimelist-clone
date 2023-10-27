@@ -3,12 +3,11 @@ import BreadCrumb from "@/Components/Breadcrumb"
 import fetchData from "@/Tools"
 import Image from "next/image"
 import WatchTrailer from "./watch-trailer"
+import VideoPlayer from "@/Components/VideoPlayer"
 
 const Detail = async ({fetchUrl}) => {
     const response = await fetchData(fetchUrl)
     const anime = response?.data
-
-    console.log(anime)
 
     return (
         <>
@@ -28,7 +27,6 @@ const Detail = async ({fetchUrl}) => {
                         width={250} 
                         height={250} 
                     />
-                    <WatchTrailer youtubeUrl={anime?.trailer?.url} />
                 </div>
                
                 
@@ -41,6 +39,8 @@ const Detail = async ({fetchUrl}) => {
                     <AnimeDetail title={'Score 🏚️'} content={`${anime?.score}`} />
                 </div>
             </div>
+
+            <VideoPlayer videoData={anime?.trailer} />
 
             <div className="grid grid-cols-1 mt-5 md:mt-10">
                 <div className="px-5 md:px-10 rounded-3xl bg-main-secondary">
