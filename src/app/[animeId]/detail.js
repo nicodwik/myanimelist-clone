@@ -1,6 +1,5 @@
 import AnimeDetail from "@/Components/AnimeDetail"
 import BreadCrumb from "@/Components/Breadcrumb"
-import VideoPlayer from "@/Components/VideoPlayer"
 import fetchData from "@/Tools"
 import Image from "next/image"
 import WatchTrailer from "./watch-trailer"
