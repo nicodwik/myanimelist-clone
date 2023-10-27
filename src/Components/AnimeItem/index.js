@@ -4,7 +4,11 @@ import Link from "next/link"
 const AnimeItem = ({id, image, title}) => {
     return (
         <div className="h-full transition-all rounded-md hover:scale-105 bg-main-secondary">
-            <Link href={`/${id}`}>
+            <Link 
+                href={`/${id}`}
+                scroll
+                >
+                    
                 <Image
                     className="object-cover w-full h-96 rounded-t-md"
                     src={image} 
